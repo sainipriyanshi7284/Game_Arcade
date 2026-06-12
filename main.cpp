@@ -1,10 +1,10 @@
 #include<bits/stdc++.h>
-#include "minisweeper.h"
-#include "hangman.h"
-#include "connectfour.h"
-#include "tictactoe.h"
-#include "blackjack.h"
-#include "score.h"
+#include "headers/minisweeper.h"
+#include "headers/hangman.h"
+#include "headers/connectfour.h"
+#include "headers/tictactoe.h"
+#include "headers/blackjack.h"
+#include "headers/score.h"
 
 using namespace std;
 
