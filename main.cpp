@@ -53,9 +53,11 @@ int main(){
                         m.checkCell();
                         if(m.gameOver()) break;
                     }  
+                    cout << endl ;
                     auto count=m.countCells();
                     if(count>0){
                         s.update( player, "MiniSweeper", count);
+                        cout << "Score = " << count << endl;
                     }
                 cout << endl;
                 cout << "Do you want to continue with this game (y/n)";
@@ -86,8 +88,7 @@ int main(){
                     h.reveal();
                     cout << endl << endl;
                     h.draw_hangman();
-                    auto won=h.win();
-                    while(!won){
+                    while(!h.win()){
                         h.input_guess();
                         h.check_guess();
                         h.reveal();
@@ -95,7 +96,16 @@ int main(){
                         h.draw_hangman();
                         cout << endl << endl;
                     }
-                    if(won) s.update( player, "Hangman", 10-h.lives );
+
+                    if(h.winner()) {
+                        s.update( player, "Hangman", 10-h.lives );
+                        cout << "Score = " << 10-h.lives << endl;
+                    }
+                    else {
+                        s.update( player, "Hangman", 0 );
+                        cout << "Score = " << 0 << endl;
+                    }
+                    cout << endl;
                 cout << "Do you want to continue with this game (y/n)";
                 cin >> c;
                 c=tolower(c);
@@ -139,10 +149,16 @@ int main(){
                         cout << endl;
                     }
                     if(cf.winner=0){ 
-                        s.update(player1, "TicTacToe",5); 
+                        s.update(player1, "ConnectFour",5); 
+                        s.update(player2,"ConnectFour",0);
+                        cout << "Score of Player 1 = " << 5 << endl;
+                        cout << "Score of Player 2 = " << 0 << endl;
                     }
                     else if(cf.winner=1){
-                        s.update(player2, "TicTacToe", 5 );
+                        s.update(player2, "ConnectFour", 5 );
+                        s.update(player1,"ConnectFour",0);
+                        cout << "Score of Player 1 = " << 0 << endl;
+                        cout << "Score of Player 2 = " << 5 << endl;
                         }
                     cout << "Do you want to continue with this game (y/n)";
                     cin >> c;
@@ -190,9 +206,15 @@ int main(){
 
                 if(t.winner==0){ 
                         s.update(player1, "TicTacToe",5); 
+                        s.update(player2,"TicTacToe",0);
+                        cout << "Score of Player 1 = " << 5 << endl;
+                        cout << "Score of Player 2 = " << 0 << endl;
                     }
                 else if(t.winner==1){
                         s.update(player2, "TicTacToe", 5 );
+                        s.update(player1,"TicTacToe",0);
+                        cout << "Score of Player 1 = " << 0 << endl;
+                        cout << "Score of Player 2 = " << 5 << endl;
                         }
 
                cout << "Do you want to continue with this game (y/n)";
@@ -231,7 +253,14 @@ int main(){
                 b.display();
                 b.take_choice();
                 cout << endl;
-                if(b.winner=1) s.update( player, "Black Jack", 5);
+                if(b.winner=1) {
+                    s.update( player, "Black Jack", 5);
+                    cout << "Score = " << 5 << endl;
+                }
+                else {
+                    s.update( player, "Black Jack", 0);
+                    cout << "Score = " << 0 << endl;
+                }
 
                 cout << "Do you want to continue with this game (y/n)";
                 cin >> c;
