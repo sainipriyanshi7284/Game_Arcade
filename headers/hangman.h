@@ -44,7 +44,6 @@ public:
         word=words[index];
         secret_word= string(words[index].length(), '_');
         hint=hints[index];
-        cout << "Index=" << index << endl;
 
     }
 
@@ -110,6 +109,13 @@ public:
             return true;
         }
         else return false;
+    }
+
+    bool winner(){
+        if(lives==0)  return false;
+        if(secret_word==word) return true;
+        else return false;
+
     }
 };
 
