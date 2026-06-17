@@ -14,6 +14,7 @@ public:
     vector<vector<char>> board;
 
     TicTacToe(){
+        winner=0
         moves=0;
         board= vector<vector<char>> (3, vector<char> (3,' '));
     }
