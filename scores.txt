@@ -1,0 +1,7 @@
+Kiara ConnectFour 5
+Lisa BlackJack 10
+Lisa ConnectFour 0
+Palak MiniSweeper 4
+Palak TicTacToe 5
+Priyanshi Hangman 5
+Priyanshi TicTacToe 0
