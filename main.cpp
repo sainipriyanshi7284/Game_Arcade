@@ -23,7 +23,7 @@ int main(){
     cout << "Scores accumulate across multiple plays." << endl;
     cout << "Leaderboard stores total score per player per game." << endl << endl;
 
-    cout << "1. Miniweeper Game \n2. Hangman Game [Word Guess] \n3. Connect Four Game \n4. Tic Tac Toe \n5. BlackJack Game\n6. LeaderBoard\n7. EXIT" << endl << endl;
+    cout << "1. MineSweeper Game \n2. Hangman Game [Word Guess] \n3. Connect Four Game \n4. Tic Tac Toe \n5. BlackJack Game\n6. LeaderBoard\n7. EXIT" << endl << endl;
 
     cout << "Enter choice to play the game: ";
         cin >> choice;
@@ -35,7 +35,7 @@ int main(){
                 char c='y';
                 while(c=='y'){
                     Minisweeper m;
-                    cout << "========================= MINISWEEPER ============================" << endl;
+                    cout << "========================= MINESWEEPER ============================" << endl;
                     cout << "============================(RULES)============================" << endl;
                     cout << endl << "You are provided with a 4 X 4 grid.";
                     cout << endl << "Mines placed on random cells all over the grid."<< endl;
@@ -56,7 +56,7 @@ int main(){
                     cout << endl ;
                     auto count=m.countCells();
                     if(count>0){
-                        s.update( player, "MiniSweeper", count);
+                        s.update( player, "MineSweeper", count);
                         cout << "Score = " << count << endl;
                     }
                 cout << endl;
