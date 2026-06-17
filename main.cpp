@@ -254,11 +254,11 @@ int main(){
                 b.take_choice();
                 cout << endl;
                 if(b.winner==1) {
-                    s.update( player, "Black Jack", 5);
+                    s.update( player, "BlackJack", 5);
                     cout << "Score = " << 5 << endl;
                 }
                 else {
-                    s.update( player, "Black Jack", 0);
+                    s.update( player, "BlackJack", 0);
                     cout << "Score = " << 0 << endl;
                 }
 
