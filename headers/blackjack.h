@@ -21,6 +21,7 @@ public:
     BlackJack(){
         player_points=0;
         dealer_points=0;
+        winner=0;
 
         player.push_back(rand()%10+1);
         player.push_back(rand()%10+1);
@@ -56,6 +57,7 @@ public:
         {
             display(); 
             cout << endl << "PLAYER BUSTED";
+            winner=0;
         }
 
         else {
@@ -112,17 +114,28 @@ public:
     }
         
     void compare(){
-        if(player_points > 21) cout << "PLAYER BUSTED";
+        if(player_points > 21) {
+            cout << "PLAYER BUSTED";
+            winner=0;
+        }
         else if(dealer_points > 21) {
             cout << "DEALER BUSTED\nPLAYER WINS";
             winner=1;
         }
-        else if(dealer_points > player_points) cout << "PLAYER LOSE!!";
-        else if(dealer_points == player_points) cout <<"MATCH DRAW!!";
-        else {
-            cout << "PLAYER WINS!!"; 
-            winner = 1;
+        else if(dealer_points > player_points) {
+            cout << "PLAYER LOSE!!";
+            winner = 0;
         }
+        else if(dealer_points == player_points){
+             cout <<"MATCH DRAW!!";
+             winner =0;
+         }
+        else if(dealer_points < player_points){
+                cout << "PLAYER WINS!!";
+                winner = 1;
+
+        }
+
 
         cout << endl;
 
